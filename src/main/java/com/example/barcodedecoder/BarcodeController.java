@@ -15,7 +15,9 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @CrossOrigin(origins = "*") // Allows frontend to call this API
 public class BarcodeController {
-
+     public BarcodeController() {
+        System.out.println("✅ BarcodeController Loaded");
+    }
     @PostMapping("/decode")
     public ResponseEntity<String> decodeBarcode(@RequestParam("image") MultipartFile file) {
         System.out.println("Received file: " + file.getOriginalFilename());
